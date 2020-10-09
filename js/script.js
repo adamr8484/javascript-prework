@@ -39,17 +39,8 @@ printMessage('Twój ruch to: ' + playerMove);
 if( computerMove == 'kamień' && playerMove == 'papier'){
     printMessage('Ty wygrywasz!');
   }
-else if( computerMove == 'kamień' && playerMove == 'nozyce'){
-    printMessage('Przegrywasz!');
-  }
-else if( computerMove == 'kamień' && playerMove == 'kamien'){
-    printMessage('Remis!');
-  }
 else if( computerMove == 'papier' && playerMove == 'nozyce'){
     printMessage('Wygrywasz!');
-  }
-else if( computerMove == 'papier' && playerMove == 'papier'){
-    printMessage('Remis!');
   }
 else if( computerMove == 'papier' && playerMove == 'kamień'){
     printMessage('Wygrywasz!');
@@ -60,9 +51,12 @@ else if( computerMove == 'nozyce' && playerMove == 'kamień'){
 else if( computerMove == 'nozyce' && playerMove == 'papier'){
     printMessage('Przegrywasz!');
   }
-else if( computerMove == 'nozyce' && playerMove == 'nozyce'){
+else if( computerMove == 'kamień' && playerMove == 'nozyce'){
+    printMessage('Przegrywasz!');
+}
+else if( computerMove == playerMove){
     printMessage('Remis!');
-  }
+}
 else if( computerMove == 'kamień' && playerMove == 'nieznany ruch'){
     printMessage('Wpisana nieprawidlowa odpowiedz');
   }
