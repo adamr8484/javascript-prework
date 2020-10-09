@@ -55,7 +55,7 @@ else if( computerMove == 'papier' && playerMove == 'kamień'){
     printMessage('Wygrywasz!');
   }
 else if( computerMove == 'nozyce' && playerMove == 'kamień'){
-    printMessage('Przegrywasz!');
+    printMessage('Wygrywasz!');
   }
 else if( computerMove == 'nozyce' && playerMove == 'papier'){
     printMessage('Przegrywasz!');
@@ -69,6 +69,6 @@ else if( computerMove == 'kamień' && playerMove == 'nieznany ruch'){
 else if( computerMove == 'nozyce' && playerMove == 'nieznany ruch'){
     printMessage('Wpisana nieprawidlowa odpowiedz');
   }
-else ( computerMove == 'papier' && playerMove == 'nieznany ruch'){
+else if ( computerMove == 'papier' && playerMove == 'nieznany ruch'){
     printMessage('Wpisana nieprawidlowa odpowiedz');
   }
