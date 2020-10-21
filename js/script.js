@@ -1,11 +1,4 @@
-function playGame(playerInput){
-
-    clearMessages ();
-
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
-
-    console.log('Wylosowana liczba to: ' + randomNumber);
-
+function playGame (playerInput){
     function getMoveName (moveNumber) {
         if (moveNumber == 1) {
             return 'kamień'
@@ -18,34 +11,39 @@ function playGame(playerInput){
         }
     }
 
-    let computerMove = getMoveName(randomNumber);
 
-    printMessage('Mój ruch to: ' + computerMove);
-
-   /* let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-
-    console.log('Gracz wpisał: ' + playerInput);
-
-    let playerMove = getMoveName(playerInput);
-
-    printMessage('Twój ruch to: ' + playerMove);*/
-
-   /* function displayResult(argComputerMove, argPlayerMove){*/
     
-        if( computerMove == 'papier' && playerMove == 'kamień'){
-        } else if (computerMove == 'papier' && playerMove == 'nozyce'){
-        } else if (computerMove == 'nozyce' && playerMove == 'kamień'){
+    function displayResult (argComputerMove, argPlayerMove) {
+        if( argComputerMove == 'papier' && argPlayerMove == 'kamień'){
             printMessage('Ty Wygrywasz');
-        } else if (computerMove == playerMove){
+        } else if (argComputerMove == 'papier' && argPlayerMove == 'nozyce'){
+            printMessage('Ty Wygrywasz');
+        } else if (argComputerMove == 'nozyce' && argPlayerMove == 'kamień'){
+            printMessage('Ty Wygrywasz');
+        } else if (argComputerMove == argPlayerMove){
             printMessage('Remis');
-        } else if (playerMove == 'nieznany ruch'){
+        } else if (argPlayerMove == 'nieznany ruch'){
             printMessage('Wpisales nieprawidlowa odpowiedz');
         } else {
             printMessage('Przegrales');
         }
-    /*}*/
-} 
+    }
 
-play-rock.addEventListener('click', buttonClicked);
-play-paper.addEventListener('click', buttonClicked);
-play-scissors.addEventListener('click', buttonClicked);
+    clearMessages ();
+    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    console.log('Wylosowana liczba to: ' + randomNumber);
+    let computerMove = getMoveName(randomNumber);
+    let playerMove = getMoveName (playerInput)
+    printMessage('Mój ruch to: ' + computerMove);
+    displayResult(computerMove, playerMove)
+}
+
+document.getElementById('play-rock').addEventListener('click',function(){
+    playGame(1);
+});
+document.getElementById('play-paper').addEventListener('click',function(){
+    playGame(3);
+});
+document.getElementById('play-scissors').addEventListener('click',function(){
+    playGame(3);
+});
